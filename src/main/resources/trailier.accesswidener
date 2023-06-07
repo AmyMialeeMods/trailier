@@ -6,3 +6,4 @@ accessible method net/minecraft/block/PitcherCropBlock isLowerHalf (Lnet/minecra
 accessible method net/minecraft/block/PitcherCropBlock isUpperHalf (Lnet/minecraft/block/BlockState;)Z
 accessible method net/minecraft/block/PitcherCropBlock canPlaceAt (Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z
 accessible field net/minecraft/loot/condition/SurvivesExplosionLootCondition INSTANCE Lnet/minecraft/loot/condition/SurvivesExplosionLootCondition;
+accessible method net/minecraft/entity/Entity setRotation (FF)V

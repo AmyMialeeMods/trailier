@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld_rod",
+  "textures": {
+    "layer0": "trailier:item/torchflower_seed_on_a_stick"
+  }
+}

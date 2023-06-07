@@ -11,5 +11,8 @@
 - Torchflowers can be lit with a flint and steel to create a new light source, a Torchspark.
 - Pitcher Pods can grow more than one Pitcher Plant.
 - Pitcher Plants act as a water source, filling nearby cauldrons with water and hydrating farmland.
+- Sniffers can be ridden by up to 3 players at once, and the player in front can put a torchflower seed on a stick to control it.
+- Camels can now pick up nearby friendly entities like a boat, and carry them along. You can shift click on a camel to have it drop the entities off.
+- Signs can be scraped with an axe to remove wax.
 
 <a href="http://bloom.amymialee.xyz"><img src="https://i.imgur.com/h4556XW.gif"></a>

@@ -6,6 +6,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.FlintAndSteelItem;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
@@ -27,7 +29,10 @@ public class FlintAndSteelItemMixin {
         BlockState blockState = world.getBlockState(blockPos);
         if (blockState.isOf(Blocks.TORCHFLOWER)) {
             PlayerEntity playerEntity = context.getPlayer();
-            world.playSound(playerEntity, blockPos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+            world.playSound(playerEntity, blockPos, SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+            if (world instanceof ServerWorld serverWorld) {
+                serverWorld.spawnParticles(ParticleTypes.FLAME, (double) blockPos.getX() + 0.5D, (double) blockPos.getY() + 0.5D, (double) blockPos.getZ() + 0.5D, 24, 0.15D, 0.15D, 0.15D, 0.01D);
+            }
             world.setBlockState(blockPos, Trailier.TORCHSPARK.getDefaultState(), Block.NOTIFY_ALL | Block.REDRAW_ON_MAIN_THREAD);
             world.emitGameEvent(playerEntity, GameEvent.BLOCK_CHANGE, blockPos);
             if (playerEntity != null) {

@@ -1,6 +1,8 @@
 package xyz.amymialee.trailier;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -9,6 +11,8 @@ import net.minecraft.block.PitcherCropBlock;
 import net.minecraft.block.TallPlantBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
@@ -26,20 +30,18 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import xyz.amymialee.trailier.blocks.TorchsparkBlock;
+import xyz.amymialee.trailier.items.SnifferStickItem;
 
 public class Trailier implements ModInitializer {
     public static final String MOD_ID = "trailier";
-    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
-
     private static final Identifier CHISELED_BOOKSHELF_LOOT_TABLE_ID = new Identifier("minecraft", "blocks/chiseled_bookshelf");
     private static final Identifier DECORATED_POT_LOOT_TABLE_ID = new Identifier("minecraft", "blocks/decorated_pot");
     private static final Identifier PITCHER_CROP_LOOT_TABLE_ID = new Identifier("minecraft", "blocks/pitcher_crop");
     private static final Identifier SUSPICIOUS_GRAVEL_LOOT_TABLE_ID = new Identifier("minecraft", "blocks/suspicious_gravel");
     private static final Identifier SUSPICIOUS_SAND_LOOT_TABLE_ID = new Identifier("minecraft", "blocks/suspicious_sand");
-    public static final Block TORCHSPARK = Registry.register(Registries.BLOCK, id("torchspark"), new TorchsparkBlock(FabricBlockSettings.create().noCollision().breakInstantly().luminance(state -> 17).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY), ParticleTypes.FLAME));
+    public static final Block TORCHSPARK = Registry.register(Registries.BLOCK, id("torchspark"), new TorchsparkBlock(FabricBlockSettings.create().replaceable().noCollision().breakInstantly().luminance(state -> 15).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY), ParticleTypes.FLAME));
+    public static final Item TORCHFLOWER_SEED_ON_A_STICK = Registry.register(Registries.ITEM, id("torchflower_seed_on_a_stick"), new SnifferStickItem(new FabricItemSettings().maxDamage(256)));
 
     @Override
     public void onInitialize() {
@@ -74,6 +76,7 @@ public class Trailier implements ModInitializer {
             }
             return lootTable;
         });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.addAfter(Items.WARPED_FUNGUS_ON_A_STICK, TORCHFLOWER_SEED_ON_A_STICK));
     }
 
     public static Identifier id(String path) {
