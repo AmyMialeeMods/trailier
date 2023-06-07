@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "xyz.amymialee.trailier.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "AbstractBlockMixin",
+    "BlockMixin",
+    "BrushableBlockMixin",
+    "BrushItemMixin",
+    "CraftingDecoratedPotRecipeMixin",
+    "FallingBlockEntityMixin",
+    "FarmlandBlockMixin",
+    "FireBlockMixin",
+    "FlintAndSteelItemMixin",
+    "PitcherCropBlockMixin",
+    "PlantBlockMixin",
+    "TallPlantBlockMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

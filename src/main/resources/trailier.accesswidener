@@ -1,0 +1,8 @@
+accessWidener   v2        named
+
+accessible field net/minecraft/item/Item recipeRemainder Lnet/minecraft/item/Item;
+mutable field net/minecraft/item/Item recipeRemainder Lnet/minecraft/item/Item;
+accessible method net/minecraft/block/PitcherCropBlock isLowerHalf (Lnet/minecraft/block/BlockState;)Z
+accessible method net/minecraft/block/PitcherCropBlock isUpperHalf (Lnet/minecraft/block/BlockState;)Z
+accessible method net/minecraft/block/PitcherCropBlock canPlaceAt (Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z
+accessible field net/minecraft/loot/condition/SurvivesExplosionLootCondition INSTANCE Lnet/minecraft/loot/condition/SurvivesExplosionLootCondition;

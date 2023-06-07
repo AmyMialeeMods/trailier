@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "trailier",
+  "version": "${version}",
+  "name": "Trails and Tweaks",
+  "description": "",
+  "authors": [
+    "AmyMialee"
+  ],
+  "contact": {
+    "repo": "https://github.com/AmyMi/trailier"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/trailier/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "xyz.amymialee.trailier.TrailierClient"
+    ],
+    "main": [
+      "xyz.amymialee.trailier.Trailier"
+    ]
+  },
+  "mixins": [
+    "trailier.mixins.json"
+  ],
+  "accessWidener": "trailier.accesswidener",
+  "depends": {
+    "fabric": "*"
+  }
+}
