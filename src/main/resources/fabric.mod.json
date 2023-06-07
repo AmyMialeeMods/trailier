@@ -3,7 +3,7 @@
   "id": "trailier",
   "version": "${version}",
   "name": "Trails and Tweaks",
-  "description": "",
+  "description": "A bunch of additions for the Trails and Tails update.",
   "authors": [
     "AmyMialee"
   ],
@@ -14,9 +14,6 @@
   "icon": "assets/trailier/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "xyz.amymialee.trailier.TrailierClient"
-    ],
     "main": [
       "xyz.amymialee.trailier.Trailier"
     ]
