@@ -19,7 +19,7 @@ public class HangingSignBlockEntityRendererMixin {
         if (player != null) {
             matrices.translate(0, -0.9375 + 0.3125F, 0);
             matrices.translate(0, 1, 0);
-            matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees((float) (Math.sin((player.age + state.hashCode()) / 10.0) * 10.0)));
+            matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees((float) (Math.sin((player.age) / 10.0 + state.hashCode()) * 2.5)));
             matrices.translate(0, -1, 0);
             matrices.translate(0, 0.9375 - 0.3125F, 0);
         }

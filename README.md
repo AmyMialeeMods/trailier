@@ -14,5 +14,6 @@
 - Sniffers can be ridden by up to 3 players at once, and the player in front can put a torchflower seed on a stick to control it.
 - Camels can now pick up nearby friendly entities like a boat, and carry them along. You can shift click on a camel to have it drop the entities off.
 - Signs can be scraped with an axe to remove wax.
+- Hanging Signs will sway in the wind.
 
 <a href="http://bloom.amymialee.xyz"><img src="https://i.imgur.com/h4556XW.gif"></a>
