@@ -24,6 +24,7 @@
     "PitcherCropBlockMixin",
     "PlantBlockMixin",
     "SnifferBrainMixin",
+    "SnifferEggBlockMixin",
     "SnifferEntityMixin",
     "TallPlantBlockMixin"
   ],
